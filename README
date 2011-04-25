@@ -1,0 +1,19 @@
+NAME
+    printRemotely.py: Copy the given file to the specified print server
+    using scp. Then ssh into printserver and run lpr.
+
+Warning: May overwrite existing files of the same name.
+
+SYNOPSIS
+    printRemotely.py [OPTIONS] [user@]printserver file
+
+OPTIONS:
+    -h / --help:               Display this help
+    -i SSH_PRIVATE_KEY:        Use this private key for scp and ssh connections
+    -P PRINTERNAME:            Use the specified printer
+
+INSPIRATION:
+    Karan Malik
+
+AUTHOR:
+    Seshadri Mahalingam (seshadri@berkeley.edu)
