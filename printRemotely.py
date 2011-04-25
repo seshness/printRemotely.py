@@ -54,7 +54,7 @@ try:
 
     scpCommand = "scp" + (" " + sshOptions if sshOptions != "" else "") + \
         ' "' + args[1] + '" ' + args[0] + ":"
-    lprCommand = "ls" + (" " + lprOptions if lprOptions != "" else "") + \
+    lprCommand = "lpr" + (" " + lprOptions if lprOptions != "" else "") + \
         ' "' + args[1].split('/')[-1] + '"'
     sshCommand = 'ssh' + (" " + sshOptions if sshOptions != "" else "") + \
         ' ' +  args[0] + ' "' + lprCommand + '"'
