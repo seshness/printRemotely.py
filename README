@@ -8,9 +8,10 @@ SYNOPSIS
     printRemotely.py [OPTIONS] [user@]printserver file
 
 OPTIONS:
-    -h / --help:               Display this help
-    -i SSH_PRIVATE_KEY:        Use this private key for scp and ssh connections
-    -P PRINTERNAME:            Use the specified printer
+    -h / --help               Display this help
+    -i SSH_PRIVATE_KEY        Use this private key for scp and ssh connections
+    -P PRINTERNAME            Use the specified printer
+    -d                        Delete the file on the server after printing
 
 INSPIRATION:
     Karan Malik
