@@ -5,6 +5,8 @@ import sys
 import getopt
 from os.path import abspath, dirname, join
 
+DEBUG_MODE = False
+
 def _help():
     print """
 NAME
@@ -51,6 +53,8 @@ try:
                 lprOptions += " " + "-Z duplex"
         elif o == "-d":
             deleteFile = True
+        elif o == "--debug":
+            DEBUG_MODE = True
 
     if len(args) != 2:
         print "Invalid arguments. Try --help."
@@ -60,7 +64,8 @@ try:
 
     scpCommand = "scp" + (" " + sshOptions if sshOptions != "" else "") + \
         ' "' + args[1] + '" ' + args[0] + ":"
-    lprCommand = "ls" + (" " + lprOptions if lprOptions != "" else "") + \
+    lprCommand = ("lpr" if not DEBUG_MODE else "ls") + \
+        (" " + lprOptions if lprOptions != "" else "") + \
         ' "' + filename + '"'
     sshCommand = 'ssh' + (" " + sshOptions if sshOptions != "" else "") + \
         ' ' +  args[0] + ' "' + lprCommand + \
